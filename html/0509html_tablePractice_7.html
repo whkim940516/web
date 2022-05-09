@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,24 +10,28 @@
 
 <body>
     <!-- <form> 태그의 action 속성은 폼 데이터(form data)를 서버로 보낼 때 해당 데이터가 도착할 URL을 명시합니다. -->
-    <form action="table.html">
-        <input type = "text" placeholder="이름">
+    <!-- 모든 양식을 채워넣고 가입을 하면 table.html로 넘어간다. -->
+    <form action="table.html"> 
+        <!-- input 집어넣는 칸 만들어주는데 각각의 type은 어떤 양식이 입력될 것인지   -->
+        <!-- text 글씨쓰는 칸을 input 할수 있도록 해줌 -->
+        <!-- password이면 입력하는 문자가 자동 *처리 된다. -->
+        <input type="text" placeholder="이름">
         <br><br>
-        <input type = "text" placeholder="아이디">
+        <input type="text" placeholder="아이디">
         <br><br>
-        <input type = "text" placeholder="비밀번호">
+        <input type="password" placeholder="비밀번호">
         <br><br>
-        <input type = "text" placeholder="비밀번호 재입력">
+        <input type="password" placeholder="비밀번호 재입력">
         <br><br>
 
         <select name="cell1" id="">
-            <option value = "">휴대폰 번호 선택</option>
+            <option value="">휴대폰 번호 선택</option>
             <option value="010">010</option>
             <option value="011">011</option>
-        </select>
+        </select> -
 
-        <input type="tel", name="cell2" pattern="[0-9]{3}"> -
-        <input type="tel", name="cell3" pattern="[0-9]{3}"><br><br>
+        <input type="tel" , name="cell2" pattern="[0-9]{3}"> -
+        <input type="tel" , name="cell3" pattern="[0-9]{3}"><br><br>
 
         <input type="text" name="email" placeholder="이메일">@
 
@@ -58,12 +63,12 @@
             <option value="061">061</option>
             <option value="062">062</option>
             <option value="063">063</option>
-            <option value="064">064</option>       
+            <option value="064">064</option>
         </select>-
 
         <input type="tel" name="t2" pattern="[0-9]{3}" style="background-color: rgb(216, 216, 216)">
         <input type="tel" name="t3" pattern="[0-9]{4}" style="background-color: rgb(216, 216, 216)"><br><br>
-        
+
         <select name="cell1" style="background-color: rgb(216, 216, 216)">
             <option value="">휴대폰</option>
             <option value="010">010</option>
@@ -75,14 +80,20 @@
         <input type="button" name="" id="" value="휴대폰 인증"><br><br>
 
         <!-- id에 chk1을 써주고 for에 chk1을 해줘야 약관 동의 글자를 눌러도 체크박스에 체크가 됩니다. -->
+        <!-- radio 버튼 컬렉션-->
+        <!-- id는 무조건 label과 맞아야 한다. -->
+        <!-- name을 다르게 하면 복수선택이 가능해지기 때문에 모두 같게 해줘야 한다. -->
+        <!-- 3개중에 하나만 고르려면 name이 같아야함. -->
         <input type="radio" name="1" id="chk1">
         <label for="chk1">인증받은 휴대폰 번호를 대표번호로 사용</label>
+        <br><br>
         <input type="radio" name="1" id="chk2">
         <label for="chk2">다른번호 등록</label>
+        <br><br>
         <input type="radio" name="1" id="chk3">
         <label for="chk3">다음에 등록함</label><br><br>
 
-
+        <!-- value는 버튼위에 해당 내용이 보이도록 한다. -->
         <input type="text" placeholder="우편번호" style="background-color: rgb(216, 216, 216)">
         <input type="button" name="" id="" value="주소찾기"><br><br>
 
@@ -90,6 +101,5 @@
         <input type="button" name="" id="" value="취소"><br><br>
     </form>
 </body>
+
 </html>
-
-
