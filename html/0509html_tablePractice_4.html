@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>테이블 실습 4</title>
 </head>
+
 <body>
-    <table border="1px solid black" width = "300", height="300">
-        <!-- tr은 '행' td는 '열' -->
-        <tr>  
-            <!-- rowspan="4" : 행 4개를 합침 -->
-            <td rowspan="4">1</td>
-            <td>2</td>
+    <table border="1px solid black" width="300" , height="300">
+        <tr>
+            <td colspan="2">2</td>
+            <td rowspan="5">7</td>
         </tr>
         <tr>
+            <td rowspan="3">1</td>
             <td>3</td>
         </tr>
         <tr>
@@ -24,10 +25,9 @@
             <td>5</td>
         </tr>
         <tr>
-            <!-- colspan="2" :  열 2개를 합침-->
             <td colspan="2">6</td>
         </tr>
     </table>
 </body>
-</html>
 
+</html>

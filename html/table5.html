@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테이블 실습 4</title>
+</head>
+<body>
+    <table border="1px solid black" width = "300", height="300">
+    <!-- 5행 3열의 구조 -->
+    <!-- table>tr*3>td*3 -->
+        <tr>
+            <!-- 열 2개를 합쳐서 2 입력 -->
+            <td colspan="2" style="background-color: red;">2</td>
+            <!-- 행 5개를 합쳐서 7 입력 -->
+            <td rowspan="5">7</td> 
+        </tr>
+        <tr>
+            <!-- 행 3개를 합쳐서 1 입력 -->
+            <td rowspan="3">1</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td colspan="2">6</td>
+        </tr>
+
+    </table>
+</body>
+</html>
+
