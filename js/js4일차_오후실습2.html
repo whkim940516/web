@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let text = prompt('텍스트 값을 입력해주세요');
+
+        if (text == '' || text == null) {
+            do {
+                text = prompt('텍스트 값을 입력해주세요');
+            } while (text.length <= 0);
+        }
+    </script>
+
+    <style>
+        div {
+            padding-top: 25%;
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        function changeRed() {
+            alert('빨간색으로 변경됩니다');
+            let red = document.getElementById('target1').style.color = "red";
+        }
+
+        function changeBlue() {
+            alert('파란색으로 변경됩니다');
+            let blue = document.getElementById('target2').style.color = "blue";
+        }
+
+        function changeGreen() {
+            alert('초록색으로 변경됩니다');
+            let blue = document.getElementById('target3').style.color = "green";
+        }
+    </script>
+
+    <div>
+        <h1>텍스트</h1>
+        <div style="display: inline;" id="target1" onclick="changeRed()">빨강 &nbsp;</div>
+        <div style="display: inline;" id="target2" onclick="changeBlue()">파랑 &nbsp;</div>
+        <div style="display: inline;" id="target3" onclick="changeGreen()">초록</div>
+    </div>
+
+</body>
+</html>
