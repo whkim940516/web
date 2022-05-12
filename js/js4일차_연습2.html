@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .big-text {
+            font-size: xx-large;
+        }
+
+        .small-text {
+            font-size: small;
+        }
+    </style>
+    <script>
+        function addTag() {
+            document.write('<h1>Hello World</h1>');  // document는 문서를 의미하는 객체이고 write는 출력을 의마하는 메소드이다.
+        }
+
+        function getTitle() {
+            /* getElementById(id)
+              주어진 문자열과 일치하는 id 속성을 가진 요소를 찾고 이를 나타내는 Element객체를 반환한다.
+             id는 문서 내에서 유일해야 하며 하나의 값은 하나의 요소만 사용할 수 있다.
+             문서내에 주어진 id가 없으면 null을 반환한다. */
+            let title = document.getElementById('title'); 
+            alert(title.textContent);  // textContent : 노드가 가지고 있는 콘텐츠를 텍스트로 조회하거나 설정한다. 
+        }
+
+        function getItems() {
+            /* getElementsByClassName()
+              주어진 클래스를 가진 모든 자식 엘리먼트의 실시간 HTMLcollection을 반환한다.*/
+            let items = document.getElementsByClassName('item');
+
+            // 첫 번째 아이템
+            let firstItem = items[0];  // items의 인덱스 0번째를 firstItem으로 선언한다.
+            
+            // 첫번째 아이템의 내용 얻기
+            let content = firstItem.textContent;    // firstItem객체의 내용을 content로 선언한다.
+
+            // 내용 바꾸기
+            firstItem.textContent = '바보야'        // firstItem의 내용을 '바보야'로 바꿔준다.
+        }
+    </script>
+
+    <!-- onclick 속성은 클릭되었을시 발생하는 이벤트를 의미한다. -->
+    <!--  클릭했을시 addTag()에 있는 내용이 호출된다. -->
+    <button onclick="addTag()">TAG 추가</button>    
+    <!-- 클릭했을시 getTitle()에 있는 내용이 호출된다. -->
+    <button onclick="getTitle()">title 얻기</button>
+
+    <h1 id="title">Hello World</h1>
+
+    <!-- ul>li*4  : ul태그 하나와 li태그 네개를 한꺼번에 만들어 준다. -->
+
+    <!-- ul 태그는 순서가 없는 html리스트(list)를 정의할때 사용된다.
+        <ul> 요소에 속하는 각 아이템은 <li> 요소를 사용하여 나타낸다. -->
+    <ul>
+        <li class="item">1</li>
+        <li class="item">2</li>
+        <li class="item">3</li>
+        <li class="item">4</li>
+    </ul>
+
+    
+    <div id="target" class=".small.text" onclick="changeClassName()">Hello</div>
+
+    <script>
+        let isSmallText = true;
+
+        function changeClassName() {
+            // document 객체에서 getElementById를 통해 target속성을 가진 요소를 찾고 변수 target으로 선언한다.
+            let target = document.getElementById('target'); 
+
+            if(isSmallText) {       // isSmallText 이면
+                target.className = 'big-text';  // target객체의 className을 big-text로 한다. => xxlarge 사이즈가 될 것이다.
+                isSmallText = false;            // isSmaillText는 false가 된다.(작은 글씨는 사라짐)
+            } else {                 // isSmallText이면
+                target.className = 'small-text';    // target객체의 className은 small-text로 한다. => small 사이즈가 될 것이다.
+                isSmallText = true;                 // isSmallText는 true가 된다.(작은 글씨가 생긴다)
+            }
+        }
+    </script>
+
+    <div id="pic" onclick="changeHtml()">hello</div>
+
+    <script>
+        function changeHtml() {
+            let pic = document.getElementById('pic');       // pic 속성을 가진 요소를 찾고 변수 pic로 선언한다.
+            pic.innerHTML = "<h1>뿅!!</h1>";                // innerHTML : HTML 요소에 접근하여 [홍길동]을 [이순신] 으로 바꿔 출력하게 만드려면 이 속성을 사용해야 한다.(추가하는 개념)
+        }
+    </script>
+</body>
+</html>
+

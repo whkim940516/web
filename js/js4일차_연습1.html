@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 해당 script 태그를 통해 my_script.js에 있는 함수를 사용할 수 있다. -->
+    <script src="my_script.js"></script> 
+</head>
+<body>
+    <script>
+
+        // var은 변수 선언으로 중복을 허용 O
+        var i = 10;
+        var name = '김우형';
+        var i = 20;
+
+        // 상수
+        const STUDENT_COUNT = 10;
+        
+        // let은 변수 선언으로 중복을 허용 X
+        let j = 10;
+
+        // 자바 스타일의 문자열 병합
+        var result = name + '은' + i + '살입니다.'
+
+        // 위에거 보다 나중에 추가된 문자열 병합
+        result = '${name}은 ${i}살입니다.'
+
+        function myAlert() {      // myAlert라는 함수를 만들어주었다.
+            // alert('경고');
+            console.log('경고');     // console창에 경고라는 log를 남겨주었다.
+        }
+    </script>
+
+    <!-- input을 button으로 하여 "버튼"이 외부에 나오도록 하였고 클릭하면 경고문이 나오도록 하였다. -->
+    <input type="button" value="버튼" onclick="javascript:alert('경고')">   
+    <button onclick="alert('경고')">버튼</button>
+    <button onclick="myAlert()">버튼</button>
+
+    <!-- showMyName같은 경우는 my_script.js 파일에 있는데 해당 파일을 부르려면 같은 폴더내에 html파일과 js파일이 있어야한다. -->
+    <button ondblclick="showMyName()">더블 클릭</button>
+    
+</body>
+</html>
