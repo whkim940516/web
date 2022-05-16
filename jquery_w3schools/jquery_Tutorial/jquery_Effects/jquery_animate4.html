@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {         // 웹페이지가 준비되고
+            $("button").click(function () {     // button 태그를 클릭하면
+                $("div").animate({              // div 태그를 찾아서 animate하는데
+                    height: 'toggle'            // height가 toggle이므로 생겼다가 사라졌다가 하게 할 수 있다.
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <p>Click the button multiple times to toggle the animation.</p>
+
+    <button>Start Animation</button>
+
+    <p>By default, all HTML elements have a static position, and cannot be moved. To manipulate the position, remember
+        to first set the CSS position property of the element to relative, fixed, or absolute!</p>
+
+    <div style="background:#98bf21;height:100px;width:100px;position:absolute;"></div>
+
+</body>
+
+</html>

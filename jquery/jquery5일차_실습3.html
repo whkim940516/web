@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <style>
+        #container {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            left: 50px;
+            top: 50px;
+            border: 1px black solid;
+        }
+
+        #mario {
+            position: absolute;  
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+
+    <div id="container">
+        <img id="mario" src="../assets/mario.png" alt="mario">
+    </div>
+
+    <script>
+        const WIDTH = 600;
+        const HEIGHT = 600;
+        let mario = $("#mario");        // id가 mario인 것을 찾아서 mario 변수에 대입함.
+
+        $("body").keydown(function (event) {
+            // 마리오 현재 좌표 정보
+            let left = parseInt(mario.css("left").replace("px", ""));  // 초기값은 0인데 움직일 때 left 값이 저장됨(키 값을 누를때 동작 저장)
+            let top = parseInt(mario.css("top").replace("px", ""));    // 초기값은 0인데 움직일 때 top 값이 저장됨(키 값을 누를 때 동작 저장)
+            let right = left + 100;             // 초기값에서 움직일 때마다 100씩 추가됨
+            let bottom = top + 100;             // 초기값에서 움직일 때마다 100씩 추가됨
+            let move = 25;  // 이동할 픽셀
+
+            switch (event.key) {
+                case "ArrowLeft":   
+                    if (left - move >= 0) {     // left에서 이동할 픽셀을 뺀 것이 0이상이니까 (박스 범위를 넘지 않음)
+                        mario.css({ left: '-=25px' });      // 움직일 때 25px작아짐
+                    }
+                    break;
+                case "ArrowRight":
+                    if (right + move <= WIDTH) {       // 추가된 값에서 이동한 픽셀이 가로를 넘지 않음(박스 범위를 넘지 않음)
+                        mario.css({ left: '+=25px' });      // 움직일때 25px 커짐
+                    }
+                    break;
+                case "ArrowUp":
+                    if (top - move >= 0) {      // top 초기값에서 이동한 픽셀이 0이상(바닥보단 커야함)
+                        mario.css({ top: '-=25px' });       // 움직일 때 25px 작아짐
+                    }
+                    break;
+                case "ArrowDown":
+                    if (bottom + move <= HEIGHT) {  // botto에서 이동한 픽셀이 600이하(높이보단 낮아야함 범위보다 높으면 안되니까)
+                        mario.css({ top: '+=25px' });       // 움직일 때 25px 커짐
+                    }
+                    break;
+            }
+        });
+    </script>
+</body>
+
+</html>
