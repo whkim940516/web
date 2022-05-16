@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        $(function () {
+            console.log('onload 후에 동작');
+
+            // 클릭 이벤트 설정
+            $('#button1').click(function () {
+                console.log('클릭!!!');
+            });
+
+            // 기존 javascript 클릭 이벤트 설정
+            document.getElementById('button2').addEventListener('click', function() {
+                console.log('클릭2!!!');
+            });
+
+            // 기존 방식과 비슷한 방식
+            $('#button3').on('click', function() {
+                console.log('클릭3!!!');
+            });
+
+            // 이벤트 체인
+            $('#button4').click(function () {
+                console.log('클릭4!!!');
+            }).mouseover(function () {
+                console.log('마우스 오버');
+            }).mouseleave(function () {
+                console.log('마우스 떠났어!');
+            });
+
+
+            $('#button5').click(function () {
+                $('#text').append('hello')      // .append()는 선택한 요소의 내용의 끝에 콘텐트를 추가한다.
+                    .append(' world')
+                    .attr('class', 'hello')     // .attr()은 요소(element)의 속성(attribute)의 값을 가져오거나 속성을 추가합니다.
+                    .attr('name', 'world');
+
+                $('big-text').attr('name', 'hello');
+            });
+        });
+    </script>
+
+    <div id="title">title</div>
+    <div class="big-text">big text</div>
+    <div class="big-text">big text2</div>
+    <button id="button1">클릭</button>
+    <button id="button2">클릭2</button>
+    <button id="button3">클릭3</button>
+    <button id="button4">클릭4</button>
+    
+    <p id="text">글씨 자리</p>
+    <button id="button5">클릭5</button>
+</body>
+</html>

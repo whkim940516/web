@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {         // 웹페이지가 준비되면
+            $("#hide").click(function () {      // id가 hide인 것을 클릭하면
+                $("p").hide();                  // p태그를 숨겨준다.
+            });
+            $("#show").click(function () {      // id가 show인 것을 클릭하면
+                $("p").show();                  // p태그를 보여준다.
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <p>If you click on the "Hide" button, I will disappear.</p>
+
+    <button id="hide">Hide</button>
+    <button id="show">Show</button>
+
+</body>
+
+</html>

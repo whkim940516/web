@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>        
+    <script>
+        $(document).ready(function () {    // 웹 페이지가 준비되면
+            $("p").on({                    // p 태그를 찾아서 
+                mouseenter: function () {       // 마우스를 갖다대면
+                    $(this).css("background-color", "lightgray");   // 클릭한 해당 태그가 lightgray로 변하고
+                },
+                mouseleave: function () {       // 마우스를 떼면
+                    $(this).css("background-color", "lightblue");   // 클릭한 해당 태그가 lightblue로 변한다.
+                },
+                click: function () {            // 클릭을 하면
+                    $(this).css("background-color", "yellow");      // 클릭한 해당 태그가 yellow로 변한다.
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <p>Click or move the mouse pointer over this paragraph.</p>
+
+</body>
+
+</html>

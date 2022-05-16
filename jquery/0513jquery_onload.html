@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <div>
+        <button id="rainbow">로그창에 click! 남기는 버튼</button>
+        <button id="rainbow2">안녕하세요 알림을 띄우는 버튼</button>
+    </div>
+
+
+    <script>
+        // $(function() {
+        //     console.log('load!!');
+        //     alert('load!!');
+        // });
+
+
+        $("#rainbow").click(function () {
+            console.log('click!');
+        });
+        $('#rainbow2').click(function () {
+            alert('안녕하세요');
+        });
+    </script>
+
+</body>
+
+</html>

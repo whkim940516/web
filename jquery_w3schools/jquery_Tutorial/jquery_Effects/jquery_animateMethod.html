@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        // jQuery animate() 메서드는 사용자 정의 애니메이션을 만드는 데 사용됩니다.
+        $(document).ready(function () {                 // 웹페이지가 준비되고
+            $("button").click(function () {             // button 태그를 클릭하면
+                $("div").animate({ left: '250px' });    // {params} 필수 params 매개변수는 애니메이션할 css 속성을 정의합니다. 여기서는 왼쪽에서 250px 멀어집니다.
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <button>Start Animation</button>
+
+    <p>By default, all HTML elements have a static position, and cannot be moved. To manipulate the position, remember
+        to first set the CSS position property of the element to relative, fixed, or absolute!</p>
+
+    <div style="background:#98bf21;height:100px;width:100px;position:absolute;"></div>
+
+</body>
+
+</html>

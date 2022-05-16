@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        // focus 함수는 양식 필드에 포커스(마우스 클릭)가 있을 때 실행됩니다.
+        $(document).ready(function () {             // 웹페이지가 준비되면
+            $("input").focus(function () {          // input 태그를 찾아서 마우스 클릭을 통해 포커스를 맞추면 
+                $(this).css("background-color", "yellow");           // 클릭한 해당 태그가 노란색이 됩니다.
+            });
+            $("input").blur(function () {           // blur는 양식 필드가 포커스(다른 곳에 마우스 클릭을 했을 때)를 잃을 때 실행됩니다.
+                $(this).css("background-color", "green");            // 클릭한 해당 태그가 초록색이 됩니다.
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    Name: <input type="text" name="fullname"><br>
+    Email: <input type="text" name="email">
+
+</body>
+
+</html>

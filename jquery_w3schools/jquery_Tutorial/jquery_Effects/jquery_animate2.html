@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {      // 웹페이지가 준비되고
+            $("button").click(function () {  // button 태그를 클릭하면
+                $("div").animate({           // div 태그에서 animate함수를 실행하며 params 는 다음과 같다.
+                    left: '250px',           // 왼쪽으로 250px 멀어지고
+                    opacity: '0.5',          // 불투명함이 0.5
+                    height: '150px',         // 높이가 150px로 되고
+                    width: '150px'           // 가로가 150px이 된다.
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <button>Start Animation</button>
+
+    <p>By default, all HTML elements have a static position, and cannot be moved. To manipulate the position, remember
+        to first set the CSS position property of the element to relative, fixed, or absolute!</p>
+
+    <div style="background:#98bf21;height:100px;width:100px;position:absolute;"></div>
+
+</body>
+
+</html>

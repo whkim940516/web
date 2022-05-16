@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        // hover() 메서드는 두 가지 기능을 사용하며 mouseenter() 및 mouseleave() 메서드의 조합입니다.
+        // 첫 번째 함수는 마우스가 HTML 요소에 들어갈 때 실행되고 두 번째 함수는 마우스가 HTML 요소를 떠날 때 실행됩니다.
+        $(document).ready(function () {
+            $("#p1").hover(function () {
+                alert("You entered p1!");
+            },
+                function () {
+                    alert("Bye! You now leave p1!");
+                });
+        });
+    </script>
+</head>
+
+<body>
+
+    <p id="p1">This is a paragraph.</p>
+
+</body>
+
+</html>
