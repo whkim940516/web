@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .not {
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            width: 200px;
+            height: 100px;
+            background-color: gray;
+            color: white;
+            font-size: 30px;
+        }
+
+        .click {
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            width: 200px;
+            height: 100px;
+            background-color: white;
+            border: 1px solid black;
+            color: black;
+            font-size: 30px;
+        }
+
+        #html {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        #css {
+            position: absolute;
+            top: 10px;
+            left: 220px;
+        }
+
+        #javascript {
+            position: absolute;
+            top: 10px;
+            left: 430px;
+            font-size: 30px;
+        }
+
+        div {
+            margin-left: 25%;
+        }
+    </style>
+
+    <div>
+        <div class="not" id="html" onmouseover="clickHTML()">html</div>
+        <div class="not" id="css" onmouseover="clickCSS()">css</div>
+        <div class="not" id="javascript" onmouseover="clickJS()">javascript</div>
+    </div>
+    
+    <script>
+        function clickHTML() {
+            document.getElementById('html').className = 'click'
+            document.getElementById('css').className = 'not'
+            document.getElementById('javascript').className = 'not'
+        }
+
+        function clickCSS() {
+            document.getElementById('css').className = 'click'
+            document.getElementById('html').className = 'not'
+            document.getElementById('javascript').className = 'not'
+        }
+
+        function clickJS() {
+            document.getElementById('javascript').className = 'click'
+            document.getElementById('html').className = 'not'
+            document.getElementById('css').className = 'not'
+        }
+    </script>
+</body>
+</html>
