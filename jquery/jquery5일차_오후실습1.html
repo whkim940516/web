@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+  <style>
+    table,
+    th,
+    td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+
+    table {
+      width: 600px;
+    }
+  </style>
+  <!-- table>tr*7>td*3 -->
+  <table>
+    <tr>
+      <th>
+        <input type="checkbox" name="all" id="all">확인
+      </th>
+      <th>제목</th>
+      <th>글쓴시간</th>
+    </tr>
+    <tr>
+      <td><input type="checkbox" name="chk" id="" value="a"></td>
+      <td>a</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" name="chk" id="" value="b"></td>
+      <td>b</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" name="chk" id="" value="c"></td>
+      <td>c</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" name="chk" id="" value="d"></td>
+      <td>d</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" name="chk" id="" value="e"></td>
+      <td>e</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" name="chk" id="" value="f"></td>
+      <td>f</td>
+      <td></td>
+    </tr>
+  </table>
+  <input type="button" value="log" id="log_button">
+
+  <script>
+    $(function () {
+      // 전체 체크, 해제
+      $("#all").click(function () {
+        $("input[name=chk]:checkbox").prop("checked", this.checked);
+      });
+
+      $("#log_button").click(function () {
+        // 체크가 없다면
+        if ($(":checkbox[name=chk]").is(":checked") == false) {
+          alert('선택 없음!!');
+          return;
+        }
+
+        // 체크된 체크박스
+        $(":checkbox[name=chk]:checked").each(function () {
+          console.log($(this).val());
+        });
+      });
+    });
+  </script>
+</body>
+</html>

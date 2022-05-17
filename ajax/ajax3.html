@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // y = f(x)                   // 수학 
+    // function f(x) { // 내용 }   // JS
+    // x => 내용                   // JS 화살표 표기법, lambda(람다) 표기법
+    // => 는 ~를 하면 으로 해석한다.
+    function loadDoc() {
+      fetch('people.json')
+        .then(response => response.json())  // response하면 response.json() 을 출력해준다.    .then을 하면 앞쪽의 결과물이 뒤쪽의 X자리에 들어간다.
+        // .then(function (response) {
+        //   return response.json();
+        // })
+        .then(json => {
+          document.getElementById("demo").innerHTML = JSON.stringify(json);   // stringfy() : javascript 값이나 객체를 json 문자열로 반환한다.
+          console.log(json);
+
+          let result = `${json.name} 의 기술 : ${json.skill}`;
+          document.getElementById("result").textContent = result;
+        });
+    }
+  </script>
+  <div id="demo"></div>
+  <div id="result"></div>
+  <button onclick="loadDoc()">get data</button>
+</body>
+
+</html>

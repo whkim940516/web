@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+  <style>
+    .header {
+      background-color: rgb(15, 15, 82);
+      color: white;
+      padding: 10px;
+    }
+
+    .content {
+      padding: 10px;
+      background-color: rgb(217, 217, 217);
+    }
+
+    .item {
+      background-color: white;
+      margin: 10px;
+    }
+
+    .container {
+      width: 200px;
+    }
+  </style>
+
+  <script>
+    $(function () {
+      $("#add_button").click(function () {     // id가 add_button인 것을 클릭하고
+        let name = prompt('이름?');            // 이름입력 값을 name 변수에 대입한다.
+        let content = prompt('내용');          // 내용 입력값을 내용 변수에 대입한다.
+        let html = `<div class='item'><b>${name}</b> ${content}</div>`; // div 태그의 class가 item인 것을 html 변수에 대입한다.
+        $(".content").append(html);         // class가 content 인 것에 html을 담는다.
+      });
+    });
+  </script>
+
+  <div class="container">
+    <div class="header">
+      최도근님, 안녕하세요?
+    </div>
+    <div class="content">
+      페이스북 색감 따라하기
+      <div class="item">
+        <b>박지성</b> SBS에서 월드컵보세요!
+      </div>
+      <div class="item">
+        <b>안정환</b> MBC죠..
+      </div>
+      <div class="item">
+        <b>이영표</b> KBS는 수신료의 가치를..
+      </div>
+    </div>
+  </div>
+  <input id="add_button" type="button" value="내용추가">
+</body>
+
+</html>
